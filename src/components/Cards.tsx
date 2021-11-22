@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, Image} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import './Cards.css'
 
 const Cards = () => {
     const data = [
@@ -21,33 +22,36 @@ const Cards = () => {
         color: string;
         linkedin: string;
      } 
+
+
     const cardDetails = (props: CardDetailsProps) => {
         return(
-        <div style={{ display: 'flex',  paddingLeft: '30px', paddingBottom: '30px' }}>
-            <Card style={{width: '16rem', height: '24rem', display:'flex', alignItems: 'center',  justifyContent: 'center', border: `2px solid ${props.color}`, fontFamily:"Poppins"}}>
-                <Card.Img variant="top" style={{padding: '30px'}} />
-                    <Image src={props.image} roundedCircle style={{width: '9rem', height: '9rem', border: `2px solid ${props.color}`}} />  
+        <div className='card-container'>
+            <Card className='card' style={{border: `2px solid ${props.color}`}}>
+                <Card.Img variant="top" className='image-container'/>
+                    <Image src={props.image} roundedCircle className='card-image' style={{border: `2px solid ${props.color}`}} />  
                 <Card.Body>  
-                    <Card.Title style={{textAlign: 'center' }}><b>{props.name}</b></Card.Title>
-                        <Card.Text style={{textAlign: 'center' }}>{props.title}</Card.Text>
+                    <Card.Title><b>{props.name}</b></Card.Title>
+                        <Card.Text className='card-title'>{props.title}</Card.Text>
                 </Card.Body>
-                <div style={{textAlign: 'center', paddingBottom: '30px'}}>
+                <div className="linkedin-container">
                     <a href={props.linkedin}>
                         <FontAwesomeIcon icon={faLinkedinIn} style={{color: `${props.color}`}}/> 
                     </a>
                 </div>
-            </Card>
+            </Card> 
         </div>
         )
     }
 
+
 return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'Poppins', fontSize: 32, paddingBottom: '20px'}}><b>MEET THE TEAM</b></div>
-        <div style={{display:'flex', overflowX: 'scroll', overflowY: 'hidden', width: '800px' }}>
-          {data.map(cardDetails)}
+        <div className='display'>
+            <div className='title'>MEET THE TEAM</div>
+            <div className='card-parent'>
+            {data.map(cardDetails)}
+            </div>
         </div>
-    </div>
 )
 }
 
