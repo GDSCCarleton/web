@@ -27,13 +27,13 @@ const Cards = () => {
     const cardDetails = (props: CardDetailsProps) => {
         return(
         <div className='card-container'>
-            <Card className='card' style={{border: `2px solid ${props.color}`}}>
+            <Card className='card' style={{border: `3px solid ${props.color}`}}>
                 <Card.Img variant="top" className='image-container'/>
-                    <Image src={props.image} roundedCircle className='card-image' style={{border: `2px solid ${props.color}`}} />  
+                    <Image src={props.image} roundedCircle className='card-image' style={{border: `3px solid ${props.color}`}} />  
                 <Card.Body>  
                     <Card.Title><b>{props.name}</b></Card.Title>
-                        <Card.Text className='card-title'>{props.title}</Card.Text>
                 </Card.Body>
+                <Card.Text className='card-title' style={{paddingTop: 190, position: 'absolute'}}>{props.title}</Card.Text>
                 <div className="linkedin-container">
                     <a href={props.linkedin}>
                         <FontAwesomeIcon icon={faLinkedinIn} style={{color: `${props.color}`}}/> 

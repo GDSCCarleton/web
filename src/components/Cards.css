@@ -29,7 +29,7 @@
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
-    width: 850px;
+    width: 60vw;
     flex-direction: row;
 
 }
@@ -38,28 +38,24 @@
     border-radius: 300px;
     border-color: black;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .display{
         padding-left: 0px;
         padding-right: 0px;
         overflow-y: hidden;
         overflow-x: hidden;
+        width: 98vw;
+
     }
     .card-parent{
-        width: 560px;
-        padding: 0px;
-
+        width: 75vw;
     }
     .card {
         width: 10rem;
-        height: 12rem;
     }
     .card-container {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    .button {
-        display: none;
+        padding-left: 100px;
+        padding-right: 100px;
     }
 }
 .card-container{
@@ -86,11 +82,14 @@
 }
 .card-title{
     text-align: center;
+    
+    
 }
+
 
 .linkedin-container{
     text-align: center;
-    padding-bottom: 30px;
+
 }
 .image-container {
     padding: 30px;
@@ -99,18 +98,19 @@
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+
   }
     
   ::-webkit-scrollbar-track {
    background: #f1f1f1; 
+   width: 5%;
   }
    
   ::-webkit-scrollbar-thumb {
      background: #8d8d8d; ;
      border-radius: 20px;    
 
-  }
-  
+  }  
       
   ::-webkit-scrollbar-thumb:hover {
     
